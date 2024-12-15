@@ -3,227 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lil_ Social Links</title>
+    <title>osama Links</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000;
+            background-color: #1b1b1b; /* Violetto scuro per il background */
             color: #fff;
             text-align: center;
-            overflow-x: hidden;
-        }
-
-        /* Banner Animato */
-        .banner {
-            width: 100%;
-            height: 300px; /* Altezza del banner */
-            background-image: url('https://i.imgur.com/s5Hds6K.gif'); /* Link diretto alla GIF */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1; /* Banner deve stare dietro al contenuto */
-        }
-
-        /* Contenuto sopra il banner */
-        .content {
-            position: relative;
-            z-index: 1;
-            top: 200px; /* Distanza tra il banner e il contenuto */
-            width: 80%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 3px solid #ff6347;
-        }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            color: #8a2be2; /* Colore del titolo in viola */
-        }
-
-        /* Aggiungiamo il testo aggiuntivo */
-        .subtitle {
-            font-size: 1.5em;
-            color: #808080; /* Colore grigio per la frase */
-            margin-bottom: 40px;
-        }
-
-        p {
-            font-size: 1.2em;
-            color: #ccc;
-            margin-bottom: 40px;
-        }
-
-        .social-links {
-            list-style-type: none;
-            padding: 0;
-            width: 100%;
+            height: 100vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            margin: 0;
+            overflow: hidden;
         }
 
-        .social-links li {
-            margin: 15px 0;
+        /* Immagine del profilo a forma di cerchio */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+            border-radius: 50%; /* Forma cerchio */
+        }
+
+        /* Titolo "osama" con il colore violetto chiaro #cc00ff */
+        h1 {
+            font-size: 4em;
+            color: #cc00ff; /* Colore titolo violetto chiaro */
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8), 0 0 25px #cc00ff, 0 0 5px #cc00ff; /* Ombra migliorata */
+        }
+
+        /* Contenitore delle icone social */
+        .social-links {
             display: flex;
-            align-items: center;
             justify-content: center;
-            opacity: 1;
+            align-items: center;
+            gap: 15px; /* Distanza più vicina tra le icone */
+            margin-top: 30px;
         }
 
         .social-links a {
-            font-size: 1.5em;
-            color: #006400; /* Colore verde scuro per i link */
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            transition: color 0.3s ease;
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            transition: transform 0.3s ease, filter 0.3s ease; /* Transizione per effetto hover */
         }
 
-        .social-links a:hover {
-            color: #004d00; /* Colore verde più scuro al passaggio del mouse */
-        }
-
+        /* Cambia il colore delle icone in bianco e aggiunge effetto luminoso */
         .social-links img {
-            width: 40px;
-            height: 40px;
-            margin-right: 15px;
-            filter: brightness(0) invert(1); /* Cambia il colore delle icone a bianco */
+            width: 100%;
+            height: 100%;
+            filter: brightness(1.5) invert(1); /* Colore bianco e luminosità aumentata */
+            transform: scale(1.2); /* Ingrandisce le icone */
         }
 
-        footer {
+        /* Effetto hover sulle icone: aumento luminosità e ingrandimento */
+        .social-links a:hover img {
+            filter: brightness(2) invert(1); /* Più luminoso e bianco al passaggio del mouse */
+            transform: scale(1.4); /* Ancora più ingrandito al passaggio del mouse */
+        }
+
+        /* Embed di Spotify */
+        iframe {
             margin-top: 30px;
-            font-size: 1em;
-            color: #bbb;
+            border: none;
+            border-radius: 10px;
+            width: 300px;
+            height: 80px;
+        }
+
+        /* Rimuoviamo il footer */
+        footer {
+            display: none;
         }
 
         /* Adattamenti per dispositivi mobili */
         @media (max-width: 768px) {
-            .content {
-                width: 90%;
-            }
-
             h1 {
                 font-size: 2.5em;
             }
 
-            .subtitle {
-                font-size: 1.2em;
-            }
-
-            p {
-                font-size: 1.1em;
-            }
-
             .social-links a {
-                font-size: 1.2em;
+                width: 50px;
+                height: 50px;
             }
 
-            .banner {
-                height: 250px; /* Altezza ridotta per mobile */
-            }
-        }
-
-        /* Adattamenti per desktop */
-        @media (min-width: 769px) {
-            .content {
-                width: 70%;
-            }
-
-            h1 {
-                font-size: 4em;
-            }
-
-            .subtitle {
-                font-size: 1.8em;
-            }
-
-            p {
-                font-size: 1.4em;
-            }
-
-            .social-links a {
-                font-size: 1.6em;
-            }
-
-            .banner {
-                height: 300px; /* Altezza più alta per desktop */
+            iframe {
+                width: 100%;
+                height: 80px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Immagine del profilo a forma di cerchio -->
+    <img class="profile-img" src="https://i.imgur.com/G8NYR7G.jpeg" alt="Profile Image">
 
-    <!-- Banner Animato -->
-    <div class="banner"></div>
+    <!-- Titolo "osama" sotto l'immagine con effetto ombra migliorato -->
+    <h1>osama</h1>
 
-    <!-- Contenuto sopra il banner -->
-    <div class="content">
-        <img class="profile-img" src="https://i.imgur.com/5hCWOoP.png" alt="Profile Image">
+    <!-- Embed Spotify -->
+    <iframe src="https://open.spotify.com/embed/track/3OzKUuAIMrQEiA4cGfYrIN?theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
-        <h1>lil_</h1>
-
-        <!-- Aggiungiamo il testo in grigio sotto il nome -->
-        <p class="subtitle">playing vid games or sum</p>
-
-        <p>Here you can find my social media links:</p>
-
-        <!-- Traccia Spotify Embed -->
-        <iframe src="https://open.spotify.com/embed/track/3OzKUuAIMrQEiA4cGfYrIN?si=Ea_h-Tt-R-SmiFPX4igflA" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
-
-        <ul class="social-links">
-            <li>
-                <a href="https://www.instagram.com/mocro._momo._" target="_blank">
-                    <img src="https://img.icons8.com/ios/452/instagram-new.png" alt="Instagram">
-                    Instagram: mocro._momo._
-                </a>
-            </li>
-            <li>
-                <!-- Link corretto di Roblox -->
-                <a href="https://www.roblox.com/users/3445171439/profile" target="_blank">
-                    <img src="https://img.icons8.com/ios/452/roblox.png" alt="Roblox">
-                    Roblox: fire_riteOriginal
-                </a>
-            </li>
-            <li>
-                <a href="https://discord.com/users/zoaxsk155k" target="_blank">
-                    <img src="https://img.icons8.com/ios/452/discord-logo.png" alt="Discord">
-                    Discord: zoaxsk155k
-                </a>
-            </li>
-            <li>
-                <a href="https://www.reddit.com/u/YogurtclosetOdd7310/s/nJnfyyZTt1" target="_blank">
-                    <img src="https://img.icons8.com/ios/452/reddit.png" alt="Reddit">
-                    Reddit: YogurtclosetOdd7310
-                </a>
-            </li>
-            <!-- Link GitHub -->
-            <li>
-                <a href="https://github.com/zoaxsk" target="_blank">
-                    <img src="https://img.icons8.com/ios/452/github.png" alt="GitHub">
-                    GitHub: zoaxsk
-                </a>
-            </li>
-        </ul>
-
-        <footer>
-            <p>Created by Simoo <3</p>
-        </footer>
+    <!-- Icone Social -->
+    <div class="social-links">
+        <a href="https://www.instagram.com/mocro._momo._" target="_blank">
+            <img src="https://img.icons8.com/ios/452/instagram-new.png" alt="Instagram">
+        </a>
+        <a href="https://www.roblox.com/users/3445171439/profile" target="_blank">
+            <img src="https://img.icons8.com/ios/452/roblox.png" alt="Roblox">
+        </a>
+        <a href="https://discord.com/users/zoaxsk155k" target="_blank">
+            <img src="https://img.icons8.com/ios/452/discord-logo.png" alt="Discord">
+        </a>
+        <a href="https://www.reddit.com/u/YogurtclosetOdd7310/s/nJnfyyZTt1" target="_blank">
+            <img src="https://img.icons8.com/ios/452/reddit.png" alt="Reddit">
+        </a>
+        <a href="https://github.com/zoaxsk" target="_blank">
+            <img src="https://img.icons8.com/ios/452/github.png" alt="GitHub">
+        </a>
     </div>
-
 </body>
 </html>
