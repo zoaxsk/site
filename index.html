@@ -12,53 +12,56 @@
             background-color: #1b1b1b;
             color: #fff;
             text-align: center;
-            height: 100vh;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
         /* Contenitore del profilo */
         .profile-container {
             position: relative;
             width: 100%;
-            max-width: 400px;
-            margin-top: 0;
+            max-width: 1200px; /* Aumento il limite per desktop */
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Banner in stile Discord */
+        /* Banner sopra la foto */
         .profile-banner {
             position: absolute;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
-            height: 180px; /* Altezza banner */
-            background-image: url('https://i.imgur.com/x4WbNIi.gif'); /* Immagine GIF */
+            height: 300px; /* Aumento la altezza del banner */
+            background-image: url('https://i.imgur.com/x4WbNIi.gif');
             background-size: cover;
             background-position: center;
             z-index: 1;
         }
 
-        /* Foto profilo */
+        /* Foto del profilo */
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 300px; /* Aumento la dimensione per desktop */
+            height: 300px;
             border-radius: 50%;
             position: relative;
-            margin-top: 100px; /* Sposta la foto sotto il banner */
+            margin-top: 180px;
+            border: 5px solid #1b1b1b;
             z-index: 2;
-            border: 5px solid #1b1b1b; /* Bordo per distanziarla */
         }
 
         /* Titolo sotto la foto */
         h1 {
-            font-size: 4em;
+            font-size: 6em; /* Aumento la dimensione del testo */
             color: #cc00ff;
-            margin-top: 10px;
-            letter-spacing: 1px;
+            margin-top: 30px;
+            letter-spacing: 2px;
             text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8), 0 0 25px #cc00ff, 0 0 5px #cc00ff;
         }
 
@@ -67,14 +70,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px;
-            margin-top: 30px;
+            gap: 40px; /* Aumento la distanza tra le icone */
+            margin-top: 50px;
+            flex-wrap: wrap;
         }
 
         .social-links a {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
+            width: 90px; /* Icone più grandi per desktop */
+            height: 90px;
             transition: transform 0.3s ease, filter 0.3s ease;
         }
 
@@ -90,29 +93,58 @@
             transform: scale(1.4);
         }
 
-        /* Spotify */
+        /* Spotify Embed */
         iframe {
-            margin-top: 30px;
+            margin-top: 50px;
             border: none;
             border-radius: 10px;
-            width: 300px;
-            height: 80px;
+            width: 80%;
+            max-width: 600px; /* Aumento la larghezza del player */
+            height: 150px;
         }
 
-        /* Responsive */
+        /* Media Query per dispositivi mobili */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5em;
+                font-size: 3em;
+            }
+
+            .profile-img {
+                width: 150px;
+                height: 150px;
             }
 
             .social-links a {
-                width: 40px;
-                height: 40px;
+                width: 50px;
+                height: 50px;
             }
 
             iframe {
                 width: 100%;
                 height: 80px;
+            }
+        }
+
+        /* Ottimizzazione per schermi molto grandi */
+        @media (min-width: 1200px) {
+            h1 {
+                font-size: 7em; /* Ancora più grande per schermi molto grandi */
+            }
+
+            .profile-img {
+                width: 350px; /* Ancora più grande su desktop */
+                height: 350px;
+            }
+
+            .social-links a {
+                width: 100px; /* Ancora più grandi per schermi grandi */
+                height: 100px;
+            }
+
+            iframe {
+                width: 50%;
+                max-width: 700px;
+                height: 180px;
             }
         }
     </style>
