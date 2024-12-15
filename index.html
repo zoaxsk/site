@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lil_ Social Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Banner Animato */
+        .banner {
+            width: 100%;
+            height: 300px; /* Altezza del banner */
+            background-image: url('https://i.imgur.com/s5Hds6K.gif'); /* Link diretto alla GIF */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Banner deve stare dietro al contenuto */
+        }
+
+        /* Contenuto sopra il banner */
+        .content {
+            position: relative;
+            z-index: 1;
+            top: 200px; /* Distanza tra il banner e il contenuto */
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid #ff6347;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #8a2be2; /* Colore del titolo in viola */
+        }
+
+        /* Aggiungiamo il testo aggiuntivo */
+        .subtitle {
+            font-size: 1.5em;
+            color: #808080; /* Colore grigio per la frase */
+            margin-bottom: 40px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        .social-links {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+        }
+
+        .social-links li {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .social-links a {
+            font-size: 1.5em;
+            color: #006400; /* Colore verde scuro per i link */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #004d00; /* Colore verde più scuro al passaggio del mouse */
+        }
+
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            filter: brightness(0) invert(1); /* Cambia il colore delle icone a bianco */
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 1em;
+            color: #bbb;
+        }
+
+        /* Adattamenti per dispositivi mobili */
+        @media (max-width: 768px) {
+            .content {
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1.2em;
+            }
+
+            p {
+                font-size: 1.1em;
+            }
+
+            .social-links a {
+                font-size: 1.2em;
+            }
+
+            .banner {
+                height: 250px; /* Altezza ridotta per mobile */
+            }
+        }
+
+        /* Adattamenti per desktop */
+        @media (min-width: 769px) {
+            .content {
+                width: 70%;
+            }
+
+            h1 {
+                font-size: 4em;
+            }
+
+            .subtitle {
+                font-size: 1.8em;
+            }
+
+            p {
+                font-size: 1.4em;
+            }
+
+            .social-links a {
+                font-size: 1.6em;
+            }
+
+            .banner {
+                height: 300px; /* Altezza più alta per desktop */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner Animato -->
+    <div class="banner"></div>
+
+    <!-- Contenuto sopra il banner -->
+    <div class="content">
+        <img class="profile-img" src="https://i.imgur.com/5hCWOoP.png" alt="Profile Image">
+
+        <h1>lil_</h1>
+
+        <!-- Aggiungiamo il testo in grigio sotto il nome -->
+        <p class="subtitle">playing vid games or sum</p>
+
+        <p>Here you can find my social media links:</p>
+
+        <!-- Traccia Spotify Embed -->
+        <iframe src="https://open.spotify.com/embed/track/3OzKUuAIMrQEiA4cGfYrIN?si=Ea_h-Tt-R-SmiFPX4igflA" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+        <ul class="social-links">
+            <li>
+                <a href="https://www.instagram.com/mocro._momo._" target="_blank">
+                    <img src="https://img.icons8.com/ios/452/instagram-new.png" alt="Instagram">
+                    Instagram: mocro._momo._
+                </a>
+            </li>
+            <li>
+                <!-- Link corretto di Roblox -->
+                <a href="https://www.roblox.com/users/3445171439/profile" target="_blank">
+                    <img src="https://img.icons8.com/ios/452/roblox.png" alt="Roblox">
+                    Roblox: fire_riteOriginal
+                </a>
+            </li>
+            <li>
+                <a href="https://discord.com/users/zoaxsk155k" target="_blank">
+                    <img src="https://img.icons8.com/ios/452/discord-logo.png" alt="Discord">
+                    Discord: zoaxsk155k
+                </a>
+            </li>
+            <li>
+                <a href="https://www.reddit.com/u/YogurtclosetOdd7310/s/nJnfyyZTt1" target="_blank">
+                    <img src="https://img.icons8.com/ios/452/reddit.png" alt="Reddit">
+                    Reddit: YogurtclosetOdd7310
+                </a>
+            </li>
+            <!-- Link GitHub -->
+            <li>
+                <a href="https://github.com/zoaxsk" target="_blank">
+                    <img src="https://img.icons8.com/ios/452/github.png" alt="GitHub">
+                    GitHub: zoaxsk
+                </a>
+            </li>
+        </ul>
+
+        <footer>
+            <p>Created by Simoo <3</p>
+        </footer>
+    </div>
+
+</body>
+</html>
