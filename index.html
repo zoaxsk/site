@@ -9,68 +9,88 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1b1b1b; /* Violetto scuro di fallback per il background */
+            background-color: #1b1b1b;
             color: #fff;
             text-align: center;
             height: 100vh;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            overflow: hidden;
-            background-image: url('https://i.imgur.com/x4WbNIi.gif'); /* Aggiungi la GIF come background */
-            background-size: cover; /* Rende la GIF a copertura completa */
-            background-position: center; /* Centra l'immagine */
         }
 
-        /* Immagine del profilo a forma di cerchio */
+        /* Contenitore del profilo */
+        .profile-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 0;
+        }
+
+        /* Banner in stile Discord */
+        .profile-banner {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 180px; /* Altezza banner */
+            background-image: url('https://i.imgur.com/x4WbNIi.gif'); /* Immagine GIF */
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        /* Foto profilo */
         .profile-img {
             width: 150px;
             height: 150px;
-            margin-bottom: 20px;
-            border-radius: 50%; /* Forma cerchio */
+            border-radius: 50%;
+            position: relative;
+            margin-top: 100px; /* Sposta la foto sotto il banner */
+            z-index: 2;
+            border: 5px solid #1b1b1b; /* Bordo per distanziarla */
         }
 
-        /* Titolo "osama" con il colore violetto chiaro #cc00ff */
+        /* Titolo sotto la foto */
         h1 {
             font-size: 4em;
-            color: #cc00ff; /* Colore titolo violetto chiaro */
-            margin-bottom: 40px;
+            color: #cc00ff;
+            margin-top: 10px;
             letter-spacing: 1px;
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8), 0 0 25px #cc00ff, 0 0 5px #cc00ff; /* Ombra migliorata */
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8), 0 0 25px #cc00ff, 0 0 5px #cc00ff;
         }
 
-        /* Contenitore delle icone social */
+        /* Icone social */
         .social-links {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px; /* Distanza più vicina tra le icone */
+            gap: 15px;
             margin-top: 30px;
         }
 
         .social-links a {
             display: inline-block;
-            width: 60px;
-            height: 60px;
-            transition: transform 0.3s ease, filter 0.3s ease; /* Transizione per effetto hover */
+            width: 50px;
+            height: 50px;
+            transition: transform 0.3s ease, filter 0.3s ease;
         }
 
-        /* Cambia il colore delle icone in bianco e aggiunge effetto luminoso */
         .social-links img {
             width: 100%;
             height: 100%;
-            filter: brightness(1.5) invert(1); /* Colore bianco e luminosità aumentata */
-            transform: scale(1.2); /* Ingrandisce le icone */
+            filter: brightness(1.5) invert(1);
+            transform: scale(1.2);
         }
 
-        /* Effetto hover sulle icone: aumento luminosità e ingrandimento */
         .social-links a:hover img {
-            filter: brightness(2) invert(1); /* Più luminoso e bianco al passaggio del mouse */
-            transform: scale(1.4); /* Ancora più ingrandito al passaggio del mouse */
+            filter: brightness(2);
+            transform: scale(1.4);
         }
 
-        /* Embed di Spotify */
+        /* Spotify */
         iframe {
             margin-top: 30px;
             border: none;
@@ -79,20 +99,15 @@
             height: 80px;
         }
 
-        /* Rimuoviamo il footer */
-        footer {
-            display: none;
-        }
-
-        /* Adattamenti per dispositivi mobili */
+        /* Responsive */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5em;
             }
 
             .social-links a {
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
             }
 
             iframe {
@@ -103,16 +118,21 @@
     </style>
 </head>
 <body>
-    <!-- Immagine del profilo a forma di cerchio -->
-    <img class="profile-img" src="https://i.imgur.com/G8NYR7G.jpeg" alt="Profile Image">
+    <div class="profile-container">
+        <!-- Banner sopra la foto -->
+        <div class="profile-banner"></div>
+        
+        <!-- Foto del profilo -->
+        <img class="profile-img" src="https://i.imgur.com/G8NYR7G.jpeg" alt="Profile Image">
 
-    <!-- Titolo "osama" sotto l'immagine con effetto ombra migliorato -->
-    <h1>osama</h1>
+        <!-- Titolo sotto la foto -->
+        <h1>osama</h1>
+    </div>
 
-    <!-- Embed Spotify -->
+    <!-- Spotify Embed -->
     <iframe src="https://open.spotify.com/embed/track/3OzKUuAIMrQEiA4cGfYrIN?theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
-    <!-- Icone Social -->
+    <!-- Icone social -->
     <div class="social-links">
         <a href="https://www.instagram.com/mocro._momo._" target="_blank">
             <img src="https://img.icons8.com/ios/452/instagram-new.png" alt="Instagram">
